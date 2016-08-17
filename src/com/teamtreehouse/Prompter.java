@@ -78,12 +78,14 @@ public class Prompter {
         // loop until you get a good response.
         String response = "";
         System.out.printf("Please provide a %s: ", phrase);
-        response = mReader.readLine().toLowerCase().trim();
+//        response = mReader.readLine().toLowerCase().trim(); // wrong
+        response = mReader.readLine(); // correct
 
         while(mCensoredWords.contains(response)) {
             System.out.printf("Please be nice! Try again.%n");
             System.out.printf("Please provide a %s: ", phrase);
-            response = mReader.readLine().toLowerCase().trim();
+//            response = mReader.readLine().toLowerCase().trim(); // wrong
+            response = mReader.readLine(); // correct
         }
         return response;
     }
